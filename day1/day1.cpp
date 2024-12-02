@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <charconv>
 #include <iostream>
 #include <fstream>
@@ -5,7 +6,7 @@
 #include <string_view>
 #include <vector>
 
-#define LogError(...) Error
+#define LogError(...) Error(__FILE__, __LINE__, __VA_ARGS__)
 
 static void Error(const char* inFile, const int inLine, const char* inErrorMessage)
 {
